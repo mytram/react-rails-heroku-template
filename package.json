@@ -1,0 +1,14 @@
+{
+  "name": "webapp",
+  "license": "MIT",
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.22.x",
+    "npm": "6.9.x"
+  },
+  "scripts": {
+    "build": "yarn  --cwd webapp install && PUBLIC_URL=/app yarn --cwd webapp build",
+    "deploy": "cp -a ./webapp/build/. ./public/app",
+    "heroku-postbuild": "yarn build && yarn deploy"
+  }
+}
